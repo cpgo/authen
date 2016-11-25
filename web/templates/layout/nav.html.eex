@@ -23,9 +23,12 @@
     </span>
 
     <div class="nav-right nav-menu">
-        <a class="nav-item" href="#">
-            MARCELO FABIANO
-        </a>
+        <%= if current_user @conn do %>
+          <%= link @conn.assigns.current_user.email, to: "#", class: "nav-item" %>
+          <%= link "Logout", to: session_path(@conn, :delete), method: :delete, class: "nav-item delete-link" %>
+          <% else %>
+          <%= link "Login", to: session_path(@conn, :new), class: "nav-item" %>
+        <% end %>
     </div>
 </nav>
 <br>
