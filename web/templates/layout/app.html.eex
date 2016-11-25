@@ -17,6 +17,10 @@
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
             <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
+            <%= if Addict.Helper.is_logged_in(@conn) do %>
+              <li> <%= Addict.Helper.current_user(@conn).email%></li>
+              <li> <%= link "Logout", to: logout_path(@conn, :logout), method: :delete%> </li>
+            <% end %>
           </ul>
         </nav>
         <span class="logo"></span>
