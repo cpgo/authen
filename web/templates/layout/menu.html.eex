@@ -1,0 +1,36 @@
+<aside class="menu">
+    <p class="menu-label">Controle Financeiro</p>
+    <ul class="menu-list">
+        <li>
+            <a class="is-active" href="{{ route('releases.index') }}">Lançamentos</a>
+            <ul>
+                <li><a href="{{ route('releases.create') }}">Criar Lançamento</a></li>
+            </ul>
+        </li>
+        <li><a href="{{ route('transactions.index') }}">Transações</a></li>
+        <li>
+            <a href="{{ route('accounts.index') }}">Contas</a>
+            <ul>
+                <li><a href="{{ route('accounts.create') }}">Cadastrar Conta</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="{{ route('transfers.index') }}">Transferências</a>
+            <ul>
+                <li><a href="{{ route('transfers.create') }}">Realizar transferência</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="{{ route('categories.index') }}">Categorias</a>
+            <ul>
+                <li><a href="{{ route('categories.create') }}">Cadastrar Categoria</a></li>
+            </ul>
+        </li>
+        <li><a href="{{ route('reports.index') }}">Relatório</a></li>
+    </ul>
+    <p class="menu-label">Filtro Lançamentos</p>
+    <ul class="menu-list">
+        <li><a href="#">Limpar filtros</a></li>
+        <li><a href="#">Conta Corrente Santander</a></li>
+    </ul>
+</aside>
