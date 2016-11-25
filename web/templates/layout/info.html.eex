@@ -1,0 +1,22 @@
+<nav class="level">
+    <div class="level-item has-text-centered">
+        <p class="heading green">Entradas hoje</p>
+        <p class="title green">R$ 231,00</p>
+    </div>
+    <div class="level-item has-text-centered">
+        <p class="heading green">Total de entradas</p>
+        <p class="title green">R$ 231,00</p>
+    </div>
+    <div class="level-item has-text-centered">
+        <p class="heading red">Saídas hoje</p>
+        <p class="title red">R$ 432,00</p>
+    </div>
+    <div class="level-item has-text-centered">
+        <p class="heading red">Total de saídas</p>
+        <p class="title red">R$ 432,00</p>
+    </div>
+    <div class="level-item has-text-centered">
+        <p class="heading blue">Total de saldo</p>
+        <p class="title blue">R$ 532,20</p>
+    </div>
+</nav>

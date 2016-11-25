@@ -1,0 +1,11 @@
+.nav {
+  background-color: $custom-nav-background-color;
+}
+
+.nav-item a, a.nav-item {
+  color: $custom-nav-link-color;
+}
+
+.nav-item a:hover, a.nav-item:hover {
+  color: $white;
+}
