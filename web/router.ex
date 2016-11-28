@@ -35,14 +35,10 @@ defmodule Authen.Router do
     coherence_routes :protected
   end
 
-  scope "/", Authen do
-    pipe_through :browser # Use the default browser stack
-
-    get "/", PageController, :index
-  end
 
   scope "/", Authen do
     pipe_through :protected
+    resources "/", TransactionsController
 
     # add protected resources below
     # resources "/privates", MyProject.PrivateController

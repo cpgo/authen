@@ -1,0 +1,50 @@
+<div class="card is-fullwidth">
+    <header class="card-header">
+        <p class="card-header-title">Lista de Lançamentos</p>
+    </header>
+    <div class="card-content">
+        <div class="content">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Transação</th>
+                    <th>Tipo</th>
+                    <th>Data</th>
+                    <th>Valor</th>
+                    <th>Situação</th>
+                    <th>Conta</th>
+                    <th>Categoria</th>
+                    <th>Descrição</th>
+                </tr>
+                </thead>
+                <tbody>
+                  <%= for transaction <- @transaction do %>
+                    <tr class=" <%= row_class(transaction) %>">
+                      <td> <%= link "##{transaction.id}", to: "#" %></td>
+                      <td> <%= link transaction.type.description, to: "#" %></td>
+                      <td> <%= link transaction.date, to: "#" %></td>
+                      <td> <%= transaction.value %></td>
+                      <td> <%= span_status(transaction) %> </td>
+                      <td> <%= transaction.account %></td>
+                      <td> <%= transaction.category.description %></td>
+                      <td> <%= transaction.description %></td>
+                    </tr>
+                  <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<br>
+<nav class="pagination">
+    <a class="button">Página anteior</a>
+    <a class="button">Próxima página</a>
+    <ul>
+        <li>
+            <a class="button is-primary">1</a>
+        </li>
+        <li>
+            <a class="button">2</a>
+        </li>
+    </ul>
+</nav>

@@ -1,0 +1,43 @@
+<h2>Show transactions</h2>
+
+<ul>
+
+  <li>
+    <strong>Type:</strong>
+    <%= @transactions.type %>
+  </li>
+
+  <li>
+    <strong>Date:</strong>
+    <%= @transactions.date %>
+  </li>
+
+  <li>
+    <strong>Value:</strong>
+    <%= @transactions.value %>
+  </li>
+
+  <li>
+    <strong>Status:</strong>
+    <%= @transactions.status %>
+  </li>
+
+  <li>
+    <strong>Account:</strong>
+    <%= @transactions.account %>
+  </li>
+
+  <li>
+    <strong>Category:</strong>
+    <%= @transactions.category %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @transactions.description %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: transactions_path(@conn, :edit, @transactions) %>
+<%= link "Back", to: transactions_path(@conn, :index) %>
