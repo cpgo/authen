@@ -40,7 +40,8 @@ config :coherence,
   repo: Authen.Repo,
   module: Authen,
   logged_out_url: "/",
-  email_from: {"Your Name", "yourname@example.com"},
+  email_from_name: "Cassio Godinho",
+  email_from_email: "cassiopgodinho@gmail.com",
   opts: [:authenticatable, :recoverable, :lockable, :trackable, :unlockable_with_token, :registerable, :rememberable]
 
 config :coherence, Authen.Coherence.Mailer,
