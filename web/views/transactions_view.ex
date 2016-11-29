@@ -23,5 +23,10 @@ defmodule Authen.TransactionsView do
     "red"
   end
 
+  def money_format(value) do
+    value
+      |> Money.new
+      |> Money.to_string
+  end
 
 end

@@ -38,6 +38,7 @@ defmodule Authen.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
      {:coherence, "~> 0.3"},
+     {:money, "~> 1.2.0"},
      {:cowboy, "~> 1.0"}]
   end
 

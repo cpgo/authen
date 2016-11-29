@@ -122,36 +122,36 @@ defmodule Authen.Coherence.SessionController do
     |> track_logout(user, user.__struct__.trackable?)
     |> delete_rememberable(user)
   end
-
-  defp track_login(conn, _, false), do: conn
-  defp track_login(conn, user, true) do
-    ip = conn.peer |> elem(0) |> inspect
-    now = Ecto.DateTime.utc
-    {last_at, last_ip} = cond do
-      is_nil(user.last_sign_in_at) and is_nil(user.current_sign_in_at) ->
-        {now, ip}
-      !!user.current_sign_in_at ->
-        {user.current_sign_in_at, user.current_sign_in_ip}
-      true ->
-        {user.last_sign_in_at, user.last_sign_in_ip}
-    end
-
-    Helpers.changeset(:session, user.__struct__, user,
-      %{
-        sign_in_count: user.sign_in_count + 1,
-        current_sign_in_at: Ecto.DateTime.utc,
-        current_sign_in_ip: ip,
-        last_sign_in_at: last_at,
-        last_sign_in_ip: last_ip
-      })
-    |> Config.repo.update
-    |> case do
-      {:ok, _} -> nil
-      {:error, _changeset} ->
-        Logger.error ("Failed to update tracking!")
-    end
-    conn
-  end
+  # TODO fix import conflict, send pull request
+  # defp track_login(conn, _, false), do: conn
+  # defp track_login(conn, user, true) do
+  #   ip = conn.peer |> elem(0) |> inspect
+  #   now = Ecto.DateTime.utc
+  #   {last_at, last_ip} = cond do
+  #     is_nil(user.last_sign_in_at) and is_nil(user.current_sign_in_at) ->
+  #       {now, ip}
+  #     !!user.current_sign_in_at ->
+  #       {user.current_sign_in_at, user.current_sign_in_ip}
+  #     true ->
+  #       {user.last_sign_in_at, user.last_sign_in_ip}
+  #   end
+  #
+  #   Helpers.changeset(:session, user.__struct__, user,
+  #     %{
+  #       sign_in_count: user.sign_in_count + 1,
+  #       current_sign_in_at: Ecto.DateTime.utc,
+  #       current_sign_in_ip: ip,
+  #       last_sign_in_at: last_at,
+  #       last_sign_in_ip: last_ip
+  #     })
+  #   |> Config.repo.update
+  #   |> case do
+  #     {:ok, _} -> nil
+  #     {:error, _changeset} ->
+  #       Logger.error ("Failed to update tracking!")
+  #   end
+  #   conn
+  # end
 
   defp track_logout(conn, _, false), do: conn
   defp track_logout(conn, user, true) do

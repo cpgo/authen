@@ -23,7 +23,7 @@
                       <td> <%= link "##{transaction.id}", to: "#" %></td>
                       <td> <%= link transaction.type.description, to: "#" %></td>
                       <td> <%= link transaction.date, to: "#" %></td>
-                      <td> <%= transaction.value %></td>
+                      <td> <%= money_format transaction.value %></td>
                       <td> <%= span_status(transaction) %> </td>
                       <td> <%= transaction.account %></td>
                       <td> <%= transaction.category.description %></td>
