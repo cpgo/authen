@@ -31,6 +31,10 @@ defmodule Authen.Transaction do
     from t in query, where: t.type_id == 2
   end
 
+  def by_day(query, date \\ Ecto.Date.utc) do
+    from t in query, where: t.date == ^date
+  end
+
   def select_sum_of_inflow_and_outflow(query) do
     from t in query, select: %{
       inflow_total: sum(fragment("CASE WHEN ? = 1 THEN ? END", t.type_id, t.value)),

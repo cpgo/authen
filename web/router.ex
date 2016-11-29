@@ -18,6 +18,7 @@ defmodule Authen.Router do
     plug :protect_from_forgery
     plug :put_secure_browser_headers
     plug Coherence.Authentication.Session, protected: true
+    plug Authen.TransactionInfo
   end
 
   pipeline :api do

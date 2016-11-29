@@ -1,22 +1,37 @@
 <nav class="level">
     <div class="level-item has-text-centered">
         <p class="heading green">Entradas hoje</p>
-        <p class="title green">R$ 231,00</p>
+        <p class="title green"> <%= money_format @conn.assigns.transaction_values.today.inflow_total %> </p>
     </div>
+
     <div class="level-item has-text-centered">
         <p class="heading green">Total de entradas</p>
-        <p class="title green">R$ 231,00</p>
+        <p class="title green"><%= money_format @conn.assigns.transaction_values.total.inflow_total %></p>
     </div>
+
+    <div class="level-item has-text-centered">
+        <p class="heading green">Entradas pendentes</p>
+        <p class="title green">TODO</p>
+    </div>
+
     <div class="level-item has-text-centered">
         <p class="heading red">Saídas hoje</p>
-        <p class="title red">R$ 432,00</p>
+        <p class="title red"><%= money_format @conn.assigns.transaction_values.today.outflow_total %></p>
     </div>
+
+    <div class="level-item has-text-centered">
+        <p class="heading red">Saídas pendentes</p>
+        <p class="title red">TODO</p>
+    </div>
+
+
     <div class="level-item has-text-centered">
         <p class="heading red">Total de saídas</p>
-        <p class="title red">R$ 432,00</p>
+        <p class="title red"><%= money_format @conn.assigns.transaction_values.total.outflow_total %></p>
     </div>
+
     <div class="level-item has-text-centered">
         <p class="heading blue">Total de saldo</p>
-        <p class="title blue">R$ 532,20</p>
+        <p class="title blue">TODO</p>
     </div>
 </nav>

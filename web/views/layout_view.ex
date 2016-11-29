@@ -9,4 +9,12 @@ defmodule Authen.LayoutView do
     false
   end
 
+  def money_format(nil) do
+    "N/A"
+  end
+
+  def money_format(value) do
+    Money.new value
+  end
+
 end
