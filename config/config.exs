@@ -34,7 +34,7 @@ config :coherence,
   module: Authen,
   logged_out_url: "/",
   email_from: {"Your Name", "yourname@example.com"},
-  opts: [:authenticatable, :recoverable, :lockable, :trackable, :unlockable_with_token, :registerable]
+  opts: [:authenticatable, :recoverable, :lockable, :trackable, :unlockable_with_token, :registerable, :rememberable]
 
 config :coherence, Authen.Coherence.Mailer,
   adapter: Swoosh.Adapters.Sendgrid,

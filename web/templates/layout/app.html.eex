@@ -19,7 +19,7 @@
                 <div class="column">
                     <div class="columns">
                         <div class="column">
-                          <%= render("info.html")%>
+                          <%= render("info.html", conn: @conn)%>
                         </div>
                     </div>
                     <%= render @view_module, @view_template, assigns %>
