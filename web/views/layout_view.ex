@@ -10,7 +10,7 @@ defmodule Authen.LayoutView do
   end
 
   def money_format(nil) do
-    "N/A"
+    Money.new 0
   end
 
   def money_format(value) do
