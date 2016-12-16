@@ -39,6 +39,7 @@ defmodule Authen.Mixfile do
      {:gettext, "~> 0.11"},
      {:coherence, "~> 0.3"},
      {:money, "~> 1.2.0"},
+     {:credo, "~> 0.5", only: [:dev, :test]},
      {:cowboy, "~> 1.0"}]
   end
 

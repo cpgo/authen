@@ -2,14 +2,13 @@
     <p class="menu-label">Controle Financeiro</p>
     <ul class="menu-list">
         <li>
-            <a class="is-active" href="{{ route('releases.index') }}">Lançamentos</a>
+            <%= link "Lançamentos", to: transaction_path(@conn, :index) %>
             <ul>
-                <li><a href="{{ route('releases.create') }}">Criar Lançamento</a></li>
+                <%= link "Novo Lançamento", to: transaction_path(@conn, :new) %>
             </ul>
         </li>
-        <li><a href="{{ route('transactions.index') }}">Transações</a></li>
         <li>
-            <a href="{{ route('accounts.index') }}">Contas</a>
+            <%= link "Contas", to: account_path(@conn, :new) %>
             <ul>
                 <li><a href="{{ route('accounts.create') }}">Cadastrar Conta</a></li>
             </ul>

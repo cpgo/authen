@@ -1,7 +1,9 @@
-defmodule Authen.TransactionsController do
+defmodule Authen.TransactionController do
   use Authen.Web, :controller
 
   alias Authen.Transaction
+  alias Authen.Type
+  alias Authen.Status
 
   def index(conn, _params) do
     transaction =
@@ -11,7 +13,10 @@ defmodule Authen.TransactionsController do
   end
 
   def new(conn, _params) do
-    changeset = Transaction.changeset(%Transaction{})
+    changeset = Transaction.changeset(%Transaction{
+      type: %Type{},
+      status: %Status{}
+      })
     render(conn, "new.html", changeset: changeset)
   end
 
@@ -22,7 +27,7 @@ defmodule Authen.TransactionsController do
       {:ok, _transactions} ->
         conn
         |> put_flash(:info, "Transaction created successfully.")
-        |> redirect(to: transactions_path(conn, :index))
+        |> redirect(to: transaction_path(conn, :index))
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
@@ -47,7 +52,7 @@ defmodule Authen.TransactionsController do
       {:ok, transactions} ->
         conn
         |> put_flash(:info, "Transaction updated successfully.")
-        |> redirect(to: transactions_path(conn, :show, transactions))
+        |> redirect(to: transaction_path(conn, :show, transactions))
       {:error, changeset} ->
         render(conn, "edit.html", transactions: transactions, changeset: changeset)
     end
@@ -62,6 +67,6 @@ defmodule Authen.TransactionsController do
 
     conn
     |> put_flash(:info, "Transaction deleted successfully.")
-    |> redirect(to: transactions_path(conn, :index))
+    |> redirect(to: transaction_path(conn, :index))
   end
 end

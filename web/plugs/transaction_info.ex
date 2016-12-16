@@ -8,7 +8,7 @@ defmodule Authen.TransactionInfo do
   end
 
 
-  def call(conn, default) do
+  def call(conn, _) do
     values = %{
         today: Transaction |> Transaction.by_day |> Transaction.select_sum_of_inflow_and_outflow |> Repo.one,
         total: Transaction |> Transaction.select_sum_of_inflow_and_outflow |> Repo.one

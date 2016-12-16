@@ -14,7 +14,7 @@
         <div class="container is-fluid">
             <div class="columns">
                 <div class="column is-2">
-                  <%= render("menu.html")%>
+                  <%= render("menu.html", conn: @conn)%>
                 </div>
                 <div class="column">
                     <div class="columns">

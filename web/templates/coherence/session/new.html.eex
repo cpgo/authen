@@ -25,7 +25,8 @@
 
                 <%= if @remember do %>
                   <div class="control">
-                    <input type="checkbox"  name="remember"> Remember Me?
+                    <%= content_tag :label, "Remember Me?", class: "checkbox-label" %>
+                    <input type="checkbox"  name="remember", class: "checkbox">
                   </div>
                   <br />
                 <% end %>

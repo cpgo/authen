@@ -1,6 +1,6 @@
-defmodule Authen.TransactionsView do
+defmodule Authen.TransactionView do
   use Authen.Web, :view
-
+  import Authen.SharedHelpers, only: [date_select_br: 2]
 
   def span_status( %{status: %{id: 1, description: description}} ) do
     content_tag(:span, description, class: "bg-green")

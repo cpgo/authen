@@ -39,7 +39,8 @@ defmodule Authen.Router do
 
   scope "/", Authen do
     pipe_through :protected
-    resources "/", TransactionsController
+    resources "/", TransactionController
+    resources "/accounts", AccountController
 
     # add protected resources below
     # resources "/privates", MyProject.PrivateController

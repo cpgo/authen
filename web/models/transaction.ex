@@ -18,7 +18,7 @@ defmodule Authen.Transaction do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:type, :date, :value, :status, :account, :category, :description])
+    |> cast(params, [:date, :value, :account, :description])
     |> validate_required([:type, :date, :value, :status, :account, :category, :description])
   end
 
